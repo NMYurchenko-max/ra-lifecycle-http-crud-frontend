@@ -6,7 +6,7 @@ React, lificycle. Basic CRUD without update when working with HTTP.
 
 [![CI](https://github.com/NMYurchenko-max/ra-lifecycle-http-crud-frontend/actions/workflows/web.yml/badge.svg)](https://github.com/NMYurchenko-max/ra-lifecycle-http-crud-frontend/actions/workflows/web.yml)
 
-[![Deploy](https://nmyurchenko-max.github.io/ra-lifecycle-http-crud-frontend/)](https://nmyurchenko-max.github.io/ra-lifecycle-http-crud-frontend/)
+[![Deploy](https://nmyurchenko-max.github.io/ra-lifecycle-http-crud-frontend/)]
 
 
 ========
