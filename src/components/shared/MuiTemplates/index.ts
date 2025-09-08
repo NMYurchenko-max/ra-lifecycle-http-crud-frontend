@@ -1,0 +1,1 @@
+export { SearchIconTemplate } from './SearchIconTemplate';

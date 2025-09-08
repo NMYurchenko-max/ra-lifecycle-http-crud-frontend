@@ -1,0 +1,210 @@
+/*
+ * Базовые стили приложения в формате «вертикального JSON»
+ * Каждое свойство на новой строке для лучшей читаемости.
+ * Устанавливаем схему цвета (поддержка светлой/тёмной темы) 
+ */
+
+:root {
+  color-scheme: light dark;
+}
+
+* {
+  /* Унифицируем расчёт размеров */
+  box-sizing: border-box;
+}
+
+body {
+  /* Сбрасываем отступы */
+  margin: 0;
+  /* Базовое семейство шрифтов */
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.container {
+  /* Центрирование и максимальная ширина контейнера */
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr;
+
+}
+
+.header {
+  /* Вёрстка шапки */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.header h1 {
+  /* Заголовок приложения */
+  margin: 0;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.refresh-btn {
+  /* Кнопка обновления */
+  border: 1px solid #22c55e;
+  background: #22c55e22;
+  color: #16a34a;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.refresh-btn:hover {
+  /* Ховер-состояние */
+  background: #22c55e33;
+}
+
+.note-form {
+  /* Обёртка формы заметок */
+  border: 1px solid #ddd;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.note-form__label {
+  /* Подпись к форме */
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.note-form__controls {
+  /* Сетка для textarea + кнопки */
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  align-items: start;
+}
+
+.note-form__textarea {
+  /* Поле ввода */
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: vertical;
+}
+
+.btn {
+  /* Универсальная кнопка */
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid #2563eb;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+.btn:hover {
+  /* Ховер-состояние */
+  filter: brightness(0.95);
+}
+
+/* Сетка карточек заметок */
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 1fr)); /* Два столбца, каждый не менее 200px */
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+}
+
+.note-card {
+  /* Карточка заметки */
+  position: relative;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  background: #fff;
+  color: #111;
+}
+
+.note-card__delete {
+  /* Кнопка удаления карточки */
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  line-height: 20px;
+  cursor: pointer;
+  color: #ef4444;
+}
+
+.note-card__delete:hover {
+  /* Ховер-состояние удаления */
+  color: #b91c1c;
+}
+
+.note-card__content {
+  /* Контент карточки */
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.loading {
+  /* Состояние загрузки */
+  opacity: 0.8;
+}
+
+.error {
+  /* Отображение ошибки */
+  color: #b91c1c;
+  margin: 12px 0;
+}
+
+.empty {
+  /* Пустой список */
+  opacity: 0.7;
+  padding: 8px 0;
+}
+
+.badge {
+  /* Небольшой бейдж для демонстрации react-node */
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  color: #374151;
+  font-size: 12px;
+  line-height: 1;
+}
+
+/* Медиа-запросы для мобильных устройств */
+@media (max-width: 767px) {
+  .container {
+    max-width: 100%;
+  }
+
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Медиа-запросы для планшетов */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    max-width: 800px;
+  }
+
+  .notes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Медиа-запросы для больших экранов */
+@media (min-width: 1025px) {
+  .container {
+    max-width: 960px;
+  }
+}
